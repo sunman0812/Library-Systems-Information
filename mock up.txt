@@ -1,0 +1,62 @@
+class LibraryBook
+{
+    private:
+        String title, author, genre, id, publisher;
+        int status, circulationPeriod, location; // status = { 0: out, 1: Available, 2: On Hold, 3: In Maintenance} , location can be value of index in the vector of books in the library
+        Date publishedDate, dueDate; // Date object composition
+        double bookCost, overdueFine;
+
+    public:
+        void setTitle(string t){title = t;}
+        void setAuthor(string a){author = a;}
+        void setGenre(string g){genre = g;}
+        void setID(string i){id = i;}
+        void setPublisher(string p){publisher = p;}
+        String getTitle(){return title;}
+        String getAuthor(){return author;}
+        String getGenre(){return genre;}
+        String getID(){return id;}
+        String getPublisher(){return publisher;}
+        void setStatus(int s){status = s;}
+        void setCirculationPeriod(int d){circulationPeriod = d} //metric = day
+        void setLocation(int l){location = l;}
+        int getStatus(){return status;}
+        int getCirculationPeriod(){return circulationPeriod;}
+        int getLocation(){return location;}
+
+}
+
+class Customer
+{
+    private:
+        String name, address, phoneNumber, id;
+        double feeBalance;
+        //need vector of books for storing currently borrowed for each customer
+
+    public:
+        void setName(string n){name = n;}
+        void setAddress(string a){address = a;}
+        void setPhoneNumber(string p){phoneNumber = p;}
+        void setID(string i){id = i;}
+        void setFeeBalance(double f){feeBalance += f;}
+        void resetFeeBalance(){feeBalance = 0.0;}
+        void addBorrowed(LibraryBook b){ } //!!!
+        //function to return list of all borrowed books
+        void getName(){return name;}
+        void getAddress(){return address;}
+        void getPhoneNumber(){return phoneNumber;}
+        void getID(){return id;}
+        void getFeeBalance(){return feeBalance;}
+}
+
+class Date
+{
+    private:
+        int year, month, day;
+    
+    public:
+        int getYear(){return year;}
+        int getMonth(){get month;}
+        int getDay(){return day;}
+        void setDate(int y, int m, int d){year = y; month = m; day = d;}
+}
